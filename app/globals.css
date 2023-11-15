@@ -221,6 +221,9 @@ h2 {
 .minH75vh {
     min-height: 75vh;
 }
+.minHScreen {
+    @apply min-h-screen
+}
 .itemStart {
     @apply items-start
 }

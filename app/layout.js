@@ -9,11 +9,11 @@ const roboto = Roboto({
   display: 'swap',
 })
 
-export const metadata = {
-  metadataBase: new URL("https://liedownloseweight.vercel.app/"),
-  title: "Liedownandloseweight",
-  description: "Liedownandloseweight",
-};
+// export const metadata = {
+//   metadataBase: new URL("https://liedownloseweight.vercel.app/"),
+//   title: "Liedownandloseweight",
+//   description: "Liedownandloseweight",
+// };
 
 storyblokInit({
   accessToken: process.env.NEXT_PUBLIC_STORYBLOK_API_TOKEN,

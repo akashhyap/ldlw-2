@@ -4,22 +4,7 @@ import React from "react";
 
 const ImageBlock = ({ blok }) => {
   // console.log("image", blok);
-  let imageStyles = (val) => {
-    switch (blok.imageSize) {
-      case "full-cover":
-        return "full-cover";
-        break;
-      case "full-contain":
-        return "full-contain";
-        break;
-      case "inherit-contain":
-        return "inherit-contain";
-        break;
-      default:
-        return "inherit-contain";
-        break;
-    }
-  };
+
   let margin = (val) => {
     switch (blok.marginY) {
       case "my-5":
@@ -95,10 +80,14 @@ const ImageBlock = ({ blok }) => {
 
   const addedStyle = {
     marginBottom: blok?.marginBottom,
-  }
+    marginTop: blok?.marginTop,
+    paddingBottom: blok?.paddingBottom,
+    paddingTop: blok?.paddingTop,
+  };
+
   return (
     <div
-      className={`relative flex ${blok?.align} ${margin(blok?.marginY)} ${padY(blok?.paddingY)} ${maxWidth(blok?.maxWidth)} ${blok?.margin} image_block`}
+      className={`relative flex ${blok?.align} ${maxWidth(blok?.maxWidth)} image_block`}
       style={addedStyle}
       {...storyblokEditable(blok)}
     >
@@ -106,9 +95,11 @@ const ImageBlock = ({ blok }) => {
         <Image
           alt=""
           src={`${blok?.image.filename}`}
-          className={`max-w-full rounded-lg ${imageStyles(blok?.imageSize)}`}
-          width={500}
-          height={500}
+          className={`max-w-full rounded-lg ${blok?.imageSize}`}
+          width={600}
+          height={600}
+          sizes="(min-width: 808px) 50vw, 100vw"
+          {...(blok.priority ? { priority: true } : {})}
         />
       )}
     </div>

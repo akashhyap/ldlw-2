@@ -40,6 +40,9 @@ const Hero = ({ blok }) => {
       case "min-h-450":
         return "minH450";
         break;
+      case "min-h-screen":
+        return "minHScreen";
+        break;
       default:
         return " ";
         break;
@@ -78,20 +81,19 @@ const Hero = ({ blok }) => {
     backgroundColor: blok?.background_color?.color,
     marginTop: blok?.marginTop,
     marginBottom: blok?.marginBottom,
+    paddingLeft: blok?.paddingLeft,
+    paddingRight: blok?.paddingRight,
   };
   const overlayColor = {
     backgroundColor: blok?.overlay_color?.color,
     opacity: blok?.opacity,
   };
 
-
   return (
     <div
       {...storyblokEditable(blok)}
-      className={`relative maxW${
-        blok.maxWidth.large
-      }Xl overflow-hidden ${textAlign(blok.textAlign)} ${padY(
-        blok.paddingY
+      className={`relative overflow-hidden ${textAlign(
+        blok.textAlign
       )} ${minHeight(blok.minHeight)}
        ${blok.itemAlign ? "flex hero_flex" : " "} ${alignItems(
         blok.itemAlign
