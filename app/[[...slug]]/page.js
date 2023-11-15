@@ -21,7 +21,7 @@ export default async function Page({ params }) {
       <div className="min-h-screen">
         <StoryblokStory story={data?.story} />
       </div>
-      {/* <Footer blok={config?.story?.content} /> */}
+      <Footer blok={config?.story?.content} />
     </div>
   );
 }
