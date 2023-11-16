@@ -83,6 +83,8 @@ const Hero = ({ blok }) => {
     marginBottom: blok?.marginBottom,
     paddingLeft: blok?.paddingLeft,
     paddingRight: blok?.paddingRight,
+    paddingTo: blok?.paddingTop,
+    paddingBottom: blok?.paddingBottom,
   };
   const overlayColor = {
     backgroundColor: blok?.overlay_color?.color,

@@ -1,8 +1,23 @@
 import { StoryblokComponent, storyblokEditable } from "@storyblok/react";
 import React from "react";
+import styled from "styled-components";
+
+const Wrapper = styled.div`
+  position: relative;
+  width: 100%;
+  background-color: ${(props) => props?.backgroundColor};
+  margin-top: ${(props) => props?.marginTop};
+  margin-bottom: ${(props) => props?.marginBottom};
+  padding-top: ${(props) => props?.paddingTop};
+  padding-bottom: ${(props) => props?.paddingBottom};
+
+  @media (min-width: 800px) {
+    padding-left: ${(props) => props?.paddingLeft};
+    padding-right: ${(props) => props?.paddingRight};
+  }
+`;
 
 const Section = ({ blok }) => {
-  // console.log("Section", blok);
   let grid = (val) => {
     switch (blok.grid) {
       case "grid-cols-2":
@@ -64,19 +79,15 @@ const Section = ({ blok }) => {
     }
   };
 
-  const addedClasses = {
-    backgroundColor: blok?.background_color?.color,
-    marginTop: blok?.marginTop,
-    marginBottom: blok?.marginBottom,
-    paddingTop: blok?.paddingTop,
-    paddingBottom: blok?.paddingBottom,
-    paddingLeft: blok?.paddingLeft,
-  };
-
   return (
-    <div
-      className="relative w-full"
-      style={addedClasses}
+    <Wrapper
+      backgroundColor={blok?.background_color?.color}
+      marginTop={blok?.marginTop}
+      marginBottom={blok?.marginBottom}
+      paddingTop={blok?.paddingTop}
+      paddingBottom={blok?.paddingBottom}
+      paddingLeft={blok?.paddingLeft}
+      paddingRight={blok?.paddingRight}
       {...storyblokEditable(blok)}
     >
       <div
@@ -88,7 +99,7 @@ const Section = ({ blok }) => {
           <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} />
         ))}
       </div>
-    </div>
+    </Wrapper>
   );
 };
 
