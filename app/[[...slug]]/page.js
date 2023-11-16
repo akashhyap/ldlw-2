@@ -26,23 +26,23 @@ export default async function Page({ params }) {
   );
 }
 
-// export async function generateMetadata({params}) {
-//   let slug = params.slug ? params.slug.join("/") : "home";
+export async function generateMetadata({params}) {
+  let slug = params.slug ? params.slug.join("/") : "home";
 
-//   const storyblokApi = getStoryblokApi();
-//   let { data } = await storyblokApi.get(`cdn/stories/${slug}`, {
-//     version: "draft",
-//     cv: Math.random(),
-//   });
-//   // console.log("data",data.story.content.seo);
-//   return {
-//     title: data.story?.content?.seo?.title || "Lie Down Lose Weight",
-//     description:data.story?.content?.seo?.description || "Lie Down Lose Weight",
-//     alternates: {
-//       canonical: `/${slug}`
-//     }
-//   }
-// }
+  const storyblokApi = getStoryblokApi();
+  let { data } = await storyblokApi.get(`cdn/stories/${slug}`, {
+    version: "draft",
+    cv: Math.random(),
+  });
+  // console.log("data",data.story.content.seo);
+  return {
+    title: data.story?.content?.seo?.title || "Lie Down Lose Weight",
+    description:data.story?.content?.seo?.description || "Lie Down Lose Weight",
+    alternates: {
+      canonical: `/${slug}`
+    }
+  }
+}
 
 export async function generateStaticParams() {
   const storyblokApi = getStoryblokApi();
