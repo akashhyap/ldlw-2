@@ -19,7 +19,7 @@ h1 {
 }
 
 h2 {
-    @apply text-3xl lg:text-4xl xl:leading-snug mb-4 font-black
+    @apply text-3xl lg:text-4xl leading-tight lg:leading-tight xl:leading-snug mb-4 font-black
 }
 
 h3 {
@@ -300,6 +300,14 @@ h3 {
 
     .minH75vh {
         min-height: 75vh;
+    }
+
+    .minH80vh {
+        min-height: 80vh;
+    }
+
+    .minH85vh {
+        min-height: 85vh;
     }
 
     .minHScreen {

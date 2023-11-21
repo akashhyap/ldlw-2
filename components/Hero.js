@@ -37,6 +37,12 @@ const Hero = ({ blok }) => {
       case "75vh":
         return "minH75vh";
         break;
+      case "80vh":
+        return "minH80vh";
+        break;
+      case "85vh":
+        return "minH85vh";
+        break;
       case "min-h-450":
         return "minH450";
         break;
