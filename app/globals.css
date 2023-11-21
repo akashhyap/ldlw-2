@@ -15,11 +15,15 @@ body {
 }
 
 h1 {
-    @apply text-4xl md:text-5xl lg:text-6xl xl:leading-4 mb-4 font-black
+    @apply text-4xl md:text-5xl lg:text-6xl xl:leading-tight mb-4 font-black
 }
 
 h2 {
-    @apply text-3xl xl:text-5xl xl:leading-snug mb-4 font-black
+    @apply text-3xl lg:text-4xl xl:leading-snug mb-4 font-black
+}
+
+h3 {
+    @apply text-2xl mb-4
 }
 
 .g-cols-1 {
@@ -434,4 +438,9 @@ h2 {
 
 .font-900 {
     @apply font-black
+}
+@media (max-width:767px) {
+    .image_block {
+         margin-bottom: 15px;
+    }
 }

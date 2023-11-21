@@ -11,7 +11,7 @@ const BookNow = ({ blok }) => {
         <InlineWidget
           url={process.env.NEXT_PUBLIC_CALENDLY}
           styles={{
-            height: "1000px",
+            height: "800px",
           }}
         />
       </div>
